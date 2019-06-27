@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeInterviewModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DepartmentDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <NavigationProperty Name="EmployeeDetail" Relationship="Self.FK_DepartmentDetail_EmployeeDetail" FromRole="DepartmentDetail" ToRole="EmployeeDetail" />
+  </EntityType>
+  <EntityType Name="EmployeeDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DepartmentDetails" Relationship="Self.FK_DepartmentDetail_EmployeeDetail" FromRole="EmployeeDetail" ToRole="DepartmentDetail" />
+  </EntityType>
+  <Association Name="FK_DepartmentDetail_EmployeeDetail">
+    <End Role="EmployeeDetail" Type="Self.EmployeeDetail" Multiplicity="0..1" />
+    <End Role="DepartmentDetail" Type="Self.DepartmentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DepartmentDetail">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EmployeeInterviewEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DepartmentDetails" EntityType="Self.DepartmentDetail" />
+    <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetail" />
+    <AssociationSet Name="FK_DepartmentDetail_EmployeeDetail" Association="Self.FK_DepartmentDetail_EmployeeDetail">
+      <End Role="EmployeeDetail" EntitySet="EmployeeDetails" />
+      <End Role="DepartmentDetail" EntitySet="DepartmentDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

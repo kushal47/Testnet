@@ -1,0 +1,54 @@
+<h1 class="container">
+    kushal Calculator
+</h1>
+
+<div class="container-fluid">
+
+    <div class="form-group row">
+        <label for="loan" class="col-md-2">Principal:</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" id="loan" [(ngModel)]="loan" (change)="onChangeInput()">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="loan" class="col-md-2 pull-right">Rate:</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" id="loan" [(ngModel)]="rate" (change)="onChangeInput()">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="loan" class="col-md-2 pull-right">Month Number:</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" id="loan" [(ngModel)]="monthNo" (change)="onChangeInput()">
+        </div>
+    </div>
+
+    <p>EMI:&nbsp;{{emi}}</p>
+    <p>MONTHLY INTEREST: &nbsp;{{monthlyInterest}}</p>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Actual Principal</th>
+                <th scope="col">Interest</th>
+                <th scope="col">EMI</th>
+                <th scope="col">Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of dataLogic;let i = index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{data.date}}</td>
+                <td>{{data.actualPrincipal}}</td>
+                <td>{{data.interest}}</td>
+                <td>{{data.emi}}</td>
+                <td>{{data.totalRemainAmount}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewTestCrud.Data", "InterviewTestCrud.Data\InterviewTestCrud.Data.csproj", "{274DC08B-E09E-439B-A732-76F7E7C4A91A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewTestCrud.Api", "InterviewTestCrud.Api\InterviewTestCrud.Api.csproj", "{AF97D92B-F599-4DEE-9463-6187BF2F6579}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{274DC08B-E09E-439B-A732-76F7E7C4A91A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274DC08B-E09E-439B-A732-76F7E7C4A91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274DC08B-E09E-439B-A732-76F7E7C4A91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274DC08B-E09E-439B-A732-76F7E7C4A91A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF97D92B-F599-4DEE-9463-6187BF2F6579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF97D92B-F599-4DEE-9463-6187BF2F6579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF97D92B-F599-4DEE-9463-6187BF2F6579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF97D92B-F599-4DEE-9463-6187BF2F6579}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B1D52A7-F2C2-4E8B-B1CE-27B402237BA4}
+	EndGlobalSection
+EndGlobal
